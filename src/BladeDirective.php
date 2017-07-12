@@ -81,7 +81,7 @@ class BladeDirective
         // If we're dealing with a collection, we'll 
         // use a hashed version of its contents.
         if ($item instanceof \Illuminate\Support\Collection) {
-            if (isset($key)) return $item->getCacheKey() . "|$key";
+            if (isset($key)) return md5($item) . "|$key";
             return md5($item);
         }
     
