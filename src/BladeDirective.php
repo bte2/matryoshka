@@ -67,8 +67,8 @@ class BladeDirective
     {
         // If the user wants to provide their own cache
         // key, we'll opt for that.
-        if (is_string($item) || is_string($key)) {
-            return is_string($item) ? $item : $key;
+        if (is_string($item)) {
+            return $item;
         }
         
         // Otherwise we'll try to use the item to calculate
