@@ -47,7 +47,7 @@ class RussianCaching
      */
     public function has($key)
     {
-        $key = $this->normalizeCacheKey($key);
+        //$key = $this->normalizeCacheKey($key);
 
         return $this->cache
             ->tags('views')
