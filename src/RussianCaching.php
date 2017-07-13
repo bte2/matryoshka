@@ -31,7 +31,7 @@ class RussianCaching
      */
     public function put($key, $fragment)
     {
-        $key = $this->normalizeCacheKey($key);
+        //$key = $this->normalizeCacheKey($key);
 
         return $this->cache
             ->tags('views')
