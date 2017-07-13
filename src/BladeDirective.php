@@ -75,13 +75,13 @@ class BladeDirective
         // Otherwise we'll try to use the item to calculate
         // the cache key, itself.
         if (is_object($item) && method_exists($item, 'getCacheKey')) {
-            return !isset($key) ? ($item->getCacheKey() . "|" . $key) : $item->getCacheKey();
+            return isset($key) ? ($item->getCacheKey() . "|" . $key) : $item->getCacheKey();
         }
     
         // If we're dealing with a collection, we'll 
         // use a hashed version of its contents.
         if ($item instanceof \Illuminate\Support\Collection) {
-            return !isset($key) ? (md5($item) . "|" . $key) : md5($item);
+            return isset($key) ? (md5($item) . "|" . $key) : md5($item);
         }
     
         throw new Exception('Could not determine an appropriate cache key.');
