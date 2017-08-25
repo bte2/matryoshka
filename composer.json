@@ -24,5 +24,12 @@
         "phpunit/phpunit": "^5.2",
         "illuminate/database": "^5.1",
         "illuminate/cache": "^5.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laracasts\\Matryoshka\\MatryoshkaServiceProvider"
+            ]
+        }
     }
 }
