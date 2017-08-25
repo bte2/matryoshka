@@ -15,7 +15,7 @@ class MatryoshkaServiceProvider extends ServiceProvider
      */
     public function boot(Kernel $kernel)
     {
-        if ($this->app->isLocal()) {
+        if ($this->app->isLocal() && env("FLUSH_VIEWS", true)) {
             $kernel->pushMiddleware('Laracasts\Matryoshka\FlushViews');
         }
 
